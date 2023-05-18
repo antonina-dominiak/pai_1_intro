@@ -4,6 +4,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.time.Duration;
 
 import static java.net.http.HttpResponse.BodyHandlers.ofString;
 
@@ -14,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String url = "https://httpbin.org/post";
+        String url = "https://httpbin.org/delay/2";
         // wyslanie requestu
         String response = request(url);
 
@@ -26,6 +27,8 @@ public class Main {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(url1))
+                    .timeout(Duration.ofSeconds(1))
+                    //.GET()
                     .POST(HttpRequest.BodyPublishers.ofString("{\"imie\":\"natalia\"}"))
                     .header("Content-Type", "application/json")
                     .build();
