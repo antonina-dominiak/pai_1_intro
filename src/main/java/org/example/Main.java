@@ -27,7 +27,7 @@ public class Main {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(url1))
-                    .timeout(Duration.ofSeconds(1))
+                    .timeout(Duration.ofSeconds(100))
                     //.GET()
                     .POST(HttpRequest.BodyPublishers.ofString("{\"imie\":\"natalia\"}"))
                     .header("Content-Type", "application/json")
