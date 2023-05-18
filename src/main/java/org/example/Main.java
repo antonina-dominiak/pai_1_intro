@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String url = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+        String url = "https://httpbin.org/post";
         // wyslanie requestu
         String response = request(url);
 
@@ -26,7 +26,8 @@ public class Main {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(url1))
-                    .GET()
+                    .POST(HttpRequest.BodyPublishers.ofString("{\"imie\":\"natalia\"}"))
+                    .header("Content-Type", "application/json")
                     .build();
             HttpClient client = HttpClient.newHttpClient();
             var response = client.send(request, ofString());
