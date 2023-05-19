@@ -9,4 +9,9 @@ Odp.
 Patrząc od strony programisty w Netflixie czy Allegro budującego serwis, dlaczego chcemy uniknąć cascading failures?
 Patrząc od strony programisty w Amazonie budującego serwis, dlaczego graceful degradation jest ważny?
 
+Rozwiazanie zadania "Praca z danymi w formacie JSON 2":
+curl -s --fail https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json \
+    | jq '.members[].name'
+
+
 ###
